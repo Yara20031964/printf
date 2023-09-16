@@ -6,14 +6,14 @@
  * Return: no return
  */
 
-int p_str(char *str)
+int p_str(va_list list)
 {
 	int i = 0;
-
-	while (str[i])
-	{
-		_putchar(str[i]);
-		i++;
-	}
-	_putchar('\n');
+	char *str = va_arg(list, char *);
+	
+	if (!str)
+		str = "(null)";
+	i = _strlen(str);
+	write(1, str, i);
+	return (i);
 }
