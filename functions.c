@@ -7,7 +7,7 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int p_char(char c)
+int _putchar(char c)
 {
 	if (c)
 	{
@@ -42,5 +42,5 @@ int _strlen(char *s)
 int p_mod(va_list list)
 {
 	(void)list;
-	return (p_char('%'));
+	return (_putchar('%'));
 }

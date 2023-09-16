@@ -10,22 +10,30 @@ int _printf(const char *format, ...)
 {
 	int i, j, y, m;
 	va_list list;
-	
+
 	if (!format)
 		return (-1);
 	va_start(list, format);
 	for (i = 0; format[i]; i++)
 	{
 
+	}
 }
 
+/**
+ * get_type - handling printing
+ * @format: pointer to string
+ * @list: arguments
+ * @i: index of char
+ * Return: if printed successfully (size of print) and (-1) if failed
+ */
 int get_type(const char *format, int i, va_list list)
 {
 	tt type[] = {
 		{'c', p_char},
 		{'s', p_str},
 		{'d', p_int},
-		{'%', p_str},
+		{'%', p_mod},
 		{'i', p_str},
 		{'\0', NULL}
 	};
@@ -35,5 +43,5 @@ int get_type(const char *format, int i, va_list list)
 		if (format[i] == type[j].c)
 			return (type[j].print(list));
 	return (-1);
-		
-}	
+
+}

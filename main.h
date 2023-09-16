@@ -21,7 +21,7 @@ int _printf(const char *format, ...);
 int _strlen(char *c);
 
 int get_type(const char *format, int i, va_list list);
-int p_char(char c);
+int p_char(va_list list);
 int p_str(va_list list);
 int p_int(va_list list);
 int p_mod(va_list list);
