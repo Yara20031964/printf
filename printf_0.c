@@ -16,14 +16,14 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	for (i = 0; format[i]; i++)
 	{
-		if (format[i] != "%")
+		if (format[i] != '%')
 		{
 			_putchar(format[i]);
-			++y;
+			y++;
 		}
 		else
 		{
-			++i;
+			i++;
 			if (format[i])
 				m = get_type(format[i], list);
 			else
@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 			}
 			else if (m == -1)
 				return (-1);
-			else
+			else if (m != -1)
 				y += m;
 		}
 	}
