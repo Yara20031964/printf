@@ -46,11 +46,11 @@ int _printf(const char *format, ...)
 
 /**
  * get_type - handling printing
- * @format: pointer to string
+ * @c: pointer to string
  * @list: arguments
  * Return: if printed successfully (size of print) and (-1) if failed
  */
-int get_type(char format, va_list list)
+int get_type(char cc, va_list list)
 {
 	tt type[] = {
 		{'c', p_char},
@@ -63,7 +63,7 @@ int get_type(char format, va_list list)
 	int j;
 
 	for (j = 0; j < 6; j++)
-		if (format[i] == type[j].c)
+		if (cc == type[j].c)
 			return (type[j].print(list));
 	return (-1);
 
