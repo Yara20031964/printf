@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			++i;
 			if (format[i] != '\0')
 			{
-				m = get_type(format[i]);
+				m = get_type(format[i], list);
 				if (m == -1)
 				{
 					_putchar(format[i - 1]);
@@ -38,9 +38,6 @@ int _printf(const char *format, ...)
 			}
 			return (-1);
 		}
-			
-
-
 	}
 	va_end(list);
 	return (y);
@@ -50,10 +47,9 @@ int _printf(const char *format, ...)
  * get_type - handling printing
  * @format: pointer to string
  * @list: arguments
- * @i: index of char
  * Return: if printed successfully (size of print) and (-1) if failed
  */
-int get_type(char format)
+int get_type(char format, va_list list)
 {
 	tt type[] = {
 		{'c', p_char},
