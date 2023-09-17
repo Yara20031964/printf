@@ -27,6 +27,5 @@ int p_char(va_list list)
 {
 	char c = va_arg(list, int);
 
-	write(1, &c, 1);
-	return (1);
+	return (_putchar(c));
 }

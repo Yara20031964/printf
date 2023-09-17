@@ -16,8 +16,34 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	for (i = 0; format[i]; i++)
 	{
+		if (format[i] != "%")
+		{
+			_putchar(format[i]);
+			++y;
+		}
+		else
+		{
+			++i;
+			if (format[i] != '\0')
+			{
+				m = get_type(format[i]);
+				if (m == -1)
+				{
+					_putchar(format[i - 1]);
+					_putchar(format[i]);
+					y += 2;
+				}
+				else
+					y += m;
+			}
+			return (-1);
+		}
+			
+
 
 	}
+	va_end(list);
+	return (y);
 }
 
 /**
@@ -27,7 +53,7 @@ int _printf(const char *format, ...)
  * @i: index of char
  * Return: if printed successfully (size of print) and (-1) if failed
  */
-int get_type(const char *format, int i, va_list list)
+int get_type(char format)
 {
 	tt type[] = {
 		{'c', p_char},
