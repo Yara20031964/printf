@@ -55,14 +55,12 @@ int get_type(char cc, va_list list)
 	tt type[] = {
 		{'c', p_char},
 		{'s', p_str},
-		{'d', p_int},
 		{'%', p_mod},
-		{'i', p_int},
 		{'\0', NULL}
 	};
 	int j;
 
-	for (j = 0; j < 6; j++)
+	for (j = 0; j < 4; j++)
 		if (cc == type[j].c)
 			return (type[j].print(list));
 	return (-1);
