@@ -8,7 +8,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i, j, y, m;
+	int i, y = 0, m;
 	va_list list;
 
 	if (!format)
@@ -24,19 +24,20 @@ int _printf(const char *format, ...)
 		else
 		{
 			++i;
-			if (format[i] != '\0')
-			{
+			if (format[i])
 				m = get_type(format[i], list);
-				if (m == -1)
-				{
-					_putchar(format[i - 1]);
-					_putchar(format[i]);
-					y += 2;
-				}
-				else
-					y += m;
+			else
+				m = -1;
+			if (m == -1 && format[i])
+			{
+				p_mod(list);
+				y++;
+				i--;
 			}
-			return (-1);
+			else if (m == -1)
+				return (-1);
+			else
+				y += m;
 		}
 	}
 	va_end(list);
