@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i])
-				m = get_type(format[i], list);
+				m = get_type(format, i, list);
 			else
 				m = -1;
 			if (m == -1 && format[i])
@@ -46,11 +46,12 @@ int _printf(const char *format, ...)
 
 /**
  * get_type - handling printing
- * @c: pointer to string
+ * @format: pointer to string
+ * @i: position of character
  * @list: arguments
  * Return: if printed successfully (size of print) and (-1) if failed
  */
-int get_type(char cc, va_list list)
+int get_type(const char *format, int i, va_list list)
 {
 	tt type[] = {
 		{'c', p_char},
@@ -61,7 +62,7 @@ int get_type(char cc, va_list list)
 	int j;
 
 	for (j = 0; j < 4; j++)
-		if (cc == type[j].c)
+		if (format[i] == type[j].c)
 			return (type[j].print(list));
 	return (-1);
 
