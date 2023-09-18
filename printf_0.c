@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 				i--;
 			}
 			else if (m == -1)
-				return (-1);
+				break;
 			else if (m != -1)
 				y += m;
 		}
