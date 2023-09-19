@@ -57,11 +57,13 @@ int get_type(const char *format, int i, va_list list)
 		{'c', p_char},
 		{'s', p_str},
 		{'%', p_mod},
+		{'i', p_int},
+		{'d', p_int},
 		{'\0', NULL}
 	};
 	int j;
 
-	for (j = 0; j < 4; j++)
+	for (j = 0; j < 6; j++)
 		if (format[i] == type[j].c)
 			return (type[j].print(list));
 	return (-1);
