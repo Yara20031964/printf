@@ -61,7 +61,7 @@ int get_type(const char *format, int i, va_list list)
 	};
 	int j;
 
-	for (j = 0; j < 6; j++)
+	for (j = 0; j < 4; j++)
 		if (format[i] == type[j].c)
 			return (type[j].print(list));
 	return (-1);
