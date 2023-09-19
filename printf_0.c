@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			else
 				m = -1;
 			if (m == -1 && format[i])
-				return (-1);
+				_putchar(format[--i]), y++;
 			else if (m == -1)
 				return (-1);
 			else if (m != -1)
