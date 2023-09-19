@@ -12,7 +12,7 @@ int p_str(va_list list)
 	char *str = va_arg(list, char *);
 
 	if (!str)
-		str = "(null)";
+		str = "NULL_STRING";
 	i = _strlen(str);
 	write(1, str, i);
 	return (i);
