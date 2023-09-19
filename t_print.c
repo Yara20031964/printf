@@ -51,3 +51,23 @@ int p_int(va_list list)
 		_putchar(num[--i]), c++;
 	return (c);
 }
+
+/**
+ * u_to_b - print binary
+ * @list: list contain number
+ * Return: number of digits
+ */
+int u_to_b(va_list list)
+{
+	unsigned int number = va_arg(list, unsigned int);
+	char binary[100];
+	int i = 0, c = 0;
+
+	if (number == 0)
+		binary[i] = '0', i++;
+	while (number > 0)
+		binary[i] = '0' + (number % 2), number /= 2, i++;
+	while (i > 0)
+		_putchar(binary[--i]), c++;
+	return (c);
+}
