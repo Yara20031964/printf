@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 			if (m == -1 && format[i])
 				_putchar(format[--i]), y++;
 			else if (m == -1)
-				return (-1);
+				p_mod(list), y++;
 			else if (m != -1)
 				y += m;
 		}
