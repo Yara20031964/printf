@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 				m = get_type(format, i, list);
 			else
 				m = -1;
-			if (m == -1 && format[i])
+			if (m == -1 && format[i] && format[i] != ' ')
 				_putchar(format[--i]), y++;
 			else if (m == -1)
 				return (-1);
