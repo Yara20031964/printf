@@ -57,8 +57,6 @@ int get_type(const char *format, int i, va_list list)
 		{'c', p_char},
 		{'s', p_str},
 		{'%', p_mod},
-		{'i', p_int},
-		{'d', p_int},
 		{'\0', NULL}
 	};
 	int j;
