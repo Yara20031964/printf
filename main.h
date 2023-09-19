@@ -28,5 +28,9 @@ int p_int(va_list list);
 int p_mod(va_list list);
 int _putchar(char c);
 int u_to_b(va_list list);
+int p_uns(va_list list);
+int p_oct(va_list list);
+int p_hex(va_list list);
+int P_hex(va_list list);
 
 #endif

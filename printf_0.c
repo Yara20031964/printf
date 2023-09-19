@@ -8,13 +8,13 @@
 
 int _printf(const char *format, ...)
 {
-	int i, y = 0, m;
+	int i = 0, y = 0, m;
 	va_list list;
 
-	if (!format)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(list, format);
-	for (i = 0; format[i]; i++)
+	for (; format[i]; i++)
 	{
 		if (format[i] != '%')
 		{
