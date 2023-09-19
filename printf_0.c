@@ -24,15 +24,14 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			if (format[i])
-				m = get_type(format, i, list);
+			m = get_type(format, i, list);
+			if (m == -1)
+			{
+				_putchar('%'), y++;
+				if(format[i])
+					_putchar(format[i]), y++;
+			}
 			else
-				m = -1;
-			if (m == -1 && format[i])
-				_putchar(format[--i]), y++;
-			else if (m == -1)
-				;
-			else if (m != -1)
 				y += m;
 		}
 	}
@@ -54,12 +53,11 @@ int get_type(const char *format, int i, va_list list)
 		{'s', p_str},
 		{'%', p_mod},
 		{'i', p_int},
-		{'d', p_int},
-		{'\0', NULL}
+		{'d', p_int}
 	};
 	int j;
 
-	for (j = 0; j < 6; j++)
+	for (j = 0; j < 5; j++)
 		if (format[i] == type[j].c)
 			return (type[j].print(list));
 	return (-1);
