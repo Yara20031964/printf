@@ -32,7 +32,6 @@ int _printf(const char *format, ...)
 			{
 				p_mod(list);
 				y++;
-				i--;
 			}
 			else if (m == -1)
 				return (-1);
