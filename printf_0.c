@@ -24,11 +24,14 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			m = get_type(format, i, list);
+			if (format[i])
+				m = get_type(format, i, list);
+			else
+				m = -1;
 			if (m == -1)
 			{
 				_putchar('%'), y++;
-				if(format[i])
+				if (format[i])
 					_putchar(format[i]), y++;
 			}
 			else
