@@ -29,11 +29,7 @@ int _printf(const char *format, ...)
 			else
 				m = -1;
 			if (m == -1 && format[i])
-			{
-				p_mod(list);
-				y++;
-				i--;
-			}
+				p_mod(list), y++, i--;
 			else if (m == -1)
 				return (-1);
 			else if (m != -1)

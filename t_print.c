@@ -31,7 +31,7 @@ int p_char(va_list list)
 }
 
 /**
- * p_int
+ * p_int - functiom print number
  * @list: lint contain number
  * Return: size of number
  */
@@ -41,13 +41,13 @@ int p_int(va_list list)
 	char num[1024];
 	int i = 0, c = 0;
 
-	if(number == 0)
+	if (number == 0)
 		num[i] = '0', i++;
-	if(number < 0)
+	if (number < 0)
 		_putchar('-'), number *= -1, c++;
-	while(number > 0)
+	while (number > 0)
 		num[i] = '0' + (number % 10), number /= 10, i++;
-	while(i > 0)
+	while (i > 0)
 		_putchar(num[--i]), c++;
 	return (c);
 }
