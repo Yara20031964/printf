@@ -28,13 +28,11 @@ int _printf(const char *format, ...)
 				m = get_type(format, i, list);
 			else
 				m = -1;
-			if (m == -1)
-			{
-				_putchar('%'), y++;
-				if (format[i])
-					_putchar(format[i]), y++;
-			}
-			else
+			if (m == -1 && format[i])
+				_putchar(format[--i]), y++;
+			else if (m == -1)
+				return (-1);
+			else if (m != -1)
 				y += m;
 		}
 	}
