@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * p_str - function that prints a string
+ * p_str - function that prints a string and calc its length
  * @list: list contain string
  * Return: length of the string
  */
