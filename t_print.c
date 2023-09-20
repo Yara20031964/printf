@@ -53,7 +53,7 @@ int p_int(va_list list)
 }
 
 /**
- * u_to_b - print binary
+ * u_to_b - print binary and calc its len
  * @list: list contain number
  * Return: number of digits
  */
