@@ -31,7 +31,7 @@ int p_char(va_list list)
 }
 
 /**
- * p_int - functiom print number
+ * p_int - functiom print number if it is i or d
  * @list: lint contain number
  * Return: size of number
  */
