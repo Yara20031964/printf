@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printf - function print argument
+ * _printf - function print argument that will print req
  *@format: argument
  *Return: return size or -1
  */
